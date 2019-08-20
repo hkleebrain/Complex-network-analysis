@@ -20,7 +20,7 @@ Download: You can download the matlab toolbox for the generation of artificial c
 made by Gregorio Alanis-Lobato <a href="https://se.mathworks.com/matlabcentral/fileexchange/45734-cnm">here</a>  <br/>
 
 
-<span style="color: green;font-style: teletype"> % demo.m </span> <br/>
+<span style="color: green;"> % demo.m </span> <br/>
 <tt> <span style="color:black"> clear all </span> </tt> <br/>
 
 # Visualizing artificial complex networks 
