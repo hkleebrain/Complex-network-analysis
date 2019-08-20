@@ -20,7 +20,8 @@ Download: You can download the matlab toolbox for the generation of artificial c
 made by Gregorio Alanis-Lobato <a href="https://se.mathworks.com/matlabcentral/fileexchange/45734-cnm">here</a>  <br/>
 
 
-<tt> % demo.m <br/>
+<tt> 
+  <span style="color:red"> % demo.m </span> <br/>
 clear all
 </tt>
 
