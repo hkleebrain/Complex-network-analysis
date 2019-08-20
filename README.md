@@ -7,8 +7,8 @@ Updated 20 August 2019 <br/>
 
 - Step 1: [Generating artificial complex networks](#generating-artificial-complex-networks)
 - Step 2: [Visualizing artificial complex networks](#visualizing-artificial-complex-networks) 
-- Step 3: [Calculating complex network measures such as centrality, degrees, modularity, and small-worldness](#calculating-complex-network-measures">  
-- Step 4: [Comparing the complex network measures of different complex networks](#comparing-complex-network-measures"> </a> 
+- Step 3: [Calculating complex network measures such as centrality, degrees, modularity, and small-worldness](#calculating-complex-network-measures)  
+- Step 4: [Comparing the complex network measures of different complex networks](#comparing-complex-network-measures) 
     
 
 # Generating artificial complex networks
