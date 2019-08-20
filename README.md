@@ -8,8 +8,8 @@ Date: 20 August 2019
 - Step 1: [Generating artificial complex networks](#generating-artificial-complex-networks)
 - Step 2: [Visualizing artificial complex networks](#visualizing-artificial-complex-networks) 
 - Step 3: [Calculating complex network measures such as efficiency, centrality, degrees, and modularity](#calculating-complex-network-measures)  
-  - [Global network measures](##global-network-measures-global-and-average-local-efficiencies)
-  - [Local network measures](##local-network-measures-degree-local-efficiency-and-betweenness)
+  - [Global network measures](#global-network-measures:-global-and-average-local-efficiencies)
+  - [Local network measures](#local-network-measures:-degree,-local-efficiency,-and-betweenness)
     
 
 # Generating artificial complex networks
@@ -211,7 +211,7 @@ legend(network_name); set(gca,'FontSize',14);
 ![plot_efficiency](https://user-images.githubusercontent.com/54297018/63348277-e6b8f280-c393-11e9-9838-e3f3cd4d345f.png)
 
 
-## Local network measures: degree, local efficiency and betweenness
+## Local network measures: degree, local efficiency, and betweenness
 
 
 
