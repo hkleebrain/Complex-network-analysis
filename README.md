@@ -83,6 +83,8 @@ end
 colormap(hot); 
 ```
 
+![graph_generation](https://user-images.githubusercontent.com/54297018/63365851-673b1b80-c3b3-11e9-9d25-78b4a4ff4842.png)
+
 
 # Visualizing artificial complex networks
 
