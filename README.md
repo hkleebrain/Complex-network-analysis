@@ -54,8 +54,8 @@ HY = h2_net('N',p,'ave_deg',k,'gamma',gamma,'T',T,'plot','no');
 
 # Visualizing artificial complex networks
 
-<b> Visualizing SF using MATLAB built-in functions </b> <br/> 
-(You can find an example provided by MathWorks <a href="https://www.mathworks.com/help/matlab/ref/matlab.graphics.chart.primitive.graphplot.layout.html">here</a>.) 
+## Visualizing SF using MATLAB built-in functions  
+(You can find an example provided by MathWorks [here](https://www.mathworks.com/help/matlab/ref/matlab.graphics.chart.primitive.graphplot.layout.html).) 
 
 ```Matlab
 % demo_generation.m continued 
