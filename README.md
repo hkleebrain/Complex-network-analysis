@@ -5,4 +5,4 @@ Updated 20 August 2019 <br/>
 
 # Generation of artificial complex networks 
 
-Download: You can download the matlab toolbox here https://se.mathworks.com/matlabcentral/fileexchange/45734-cnm
+Download: You can download the matlab toolbox made by Gregorio Alanis-Lobato here https://se.mathworks.com/matlabcentral/fileexchange/45734-cnm
