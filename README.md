@@ -51,8 +51,6 @@ SW = sw_net('N',p,'k',k);
 RA = er_net('N',p,'P',sparsity);
 % Scale free network 
 SF = ba_net('N',p,'m',round(k/2));
-% Random network 
-RA = er_net('N',p,'P',sparsity);
 % Hyperbolic geometric network
 HY = h2_net('N',p,'ave_deg',k,'gamma',gamma,'T',T,'plot','no'); 
 ```
@@ -63,6 +61,7 @@ HY = h2_net('N',p,'ave_deg',k,'gamma',gamma,'T',T,'plot','no');
 (You can find an example provided by MathWorks <a href="https://www.mathworks.com/help/matlab/ref/matlab.graphics.chart.primitive.graphplot.layout.html">here</a>.) 
 
 ```Matlab
+% Visualizing SF
 [row,col] = find(SF); % find the index of nodes of connected edges (row,col) in SF  
 tind = find(row < col); % because SF is a symmetric matrix 
 row = row(tind); col = col(tind); 
