@@ -72,6 +72,7 @@ h = plot(G,'Layout','force');
 layout(h,'force','UseGravity',true,'Iterations',1000); 
 ```
 
+![SF](SF.jpg)
 
 # Calculating complex network measures 
 
