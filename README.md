@@ -398,6 +398,7 @@ for j = 1:5,
 end
 ```
 
+![localmeasures](https://user-images.githubusercontent.com/54297018/63364585-dbc08b00-c3b0-11e9-9bfd-0dac20697f61.png)
 
 
 
