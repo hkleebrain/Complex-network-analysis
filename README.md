@@ -160,9 +160,9 @@ You can try to plot SFs and HYs by varying sparsity.
 
 # Calculating complex network measures
 
-The codes for complex network measures are downloaded [here](https://sites.google.com/site/bctnet/Home/functions). 
+You can download codes for complex network measures [here](https://sites.google.com/site/bctnet/Home/functions). 
 
-## Efficiency 
+## Global network measure: Global and average local Efficiencies 
 
 ```Matlab
 % demo_efficiency.m
@@ -208,6 +208,9 @@ legend(network_name); set(gca,'FontSize',14);
 ``` 
 
 ![plot_efficiency](https://user-images.githubusercontent.com/54297018/63348277-e6b8f280-c393-11e9-9838-e3f3cd4d345f.png)
+
+
+## Local network measure: degree, local efficiency and betweenness 
 
 
 
