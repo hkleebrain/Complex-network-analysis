@@ -205,7 +205,7 @@ xlabel('Sparsity'); ylabel('Local efficiency');
 legend(network_name); set(gca,'FontSize',14);
 ``` 
 
-
+![plot_efficiency](https://user-images.githubusercontent.com/54297018/63347621-6d6cd000-c392-11e9-9f78-74e4046c3b9d.png)
 
 # Comparing complex network measures
 
