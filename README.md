@@ -77,7 +77,7 @@ set(gca,'FontSize',14);
 You can plot the other networks in the same way. <br/> 
 <br/>
 
-<b> Visualizing RE, SW, and RA by varying sparsity </b> <br/> 
+## Visualizing RE, SW, and RA by varying sparsity  
 
 ```Matlab
 % demo_varyingsparsity.m 
