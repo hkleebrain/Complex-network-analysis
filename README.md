@@ -141,6 +141,7 @@ for s = 1:10,
 end
 ```
 
+![networks_varyingsparsity](https://user-images.githubusercontent.com/54297018/63336685-85d0f080-c37a-11e9-81fc-cdb2d17d97c0.png)
 
 
 # Calculating complex network measures 
