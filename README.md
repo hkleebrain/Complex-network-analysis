@@ -166,22 +166,22 @@ You can try to plot SFs and HYs by varying sparsity.
 % demo_efficiency.m
 clear all;
 
-network_name = {'RA','SW','RA','SF','HY'};
+network_name = {'RE','SW','RA','SF','HY'};
 
 % Estimate global and local efficiencies
 Eglob = []; Eloc = [];
 for iter = 1:100,
     for s = 1:10,
         sparsity = s*0.1;
-        [RA,SW,RE,SF,HY] = graph_generation(sparsity);
+        [RE,SW,RA,SF,HY] = graph_generation(sparsity);
         
         for j = 1:5,
             if j == 1,
-                A = RA;
+                A = RE;
             elseif j == 2,
                 A = SW;
             elseif j == 3,
-                A = RE;
+                A = RA;
             elseif j == 4,
                 A = SF;
             else
