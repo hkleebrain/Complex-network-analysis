@@ -6,7 +6,7 @@ Updated 20 August 2019 <br/>
 # Analysis plan 
 
 <ul> 
-  <li> Step 1: [Generating artificial complex networks](# Generating artificial complex networks) </li> 
+  <li> Step 1: [Generating artificial complex networks](#-generating-artificial-complex-networks) </li> 
   <li> Step 2: <a href="# Visualizing artificial complex networks">Visualizing artificial complex networks</a> </li> 
   <li> Step 3: <a href="# Calculating complex network measures">Calculating complex network measures such as centrality, degrees, modularity, and small-worldness </a></li> 
   <li> Step 4: <a href="# Comparing the complex network measures">Comparing the complex network measures of different complex networks </a> </li> 
