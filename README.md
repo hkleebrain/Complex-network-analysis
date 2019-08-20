@@ -21,7 +21,6 @@ made by Gregorio Alanis-Lobato <a href="https://se.mathworks.com/matlabcentral/f
 
 
 <div style="color: green;"> % demo.m </div> <br/>
-<tt> <span style="color:black"> clear all </span> </tt> <br/>
 
 # Visualizing artificial complex networks 
 
