@@ -62,7 +62,7 @@ HY = h2_net('N',p,'ave_deg',k,'gamma',gamma,'T',T,'plot','no');
 <b> Visualizing SF using MATLAB built-in functions </b> <br/> 
 (You can find an example provided by MathWorks <a href="https://www.mathworks.com/help/matlab/ref/matlab.graphics.chart.primitive.graphplot.layout.html">here</a>.) 
 
-```ruby
+```python
 [row,col] = find(SF); % find the index of nodes of connected edges (row,col) in SF  
 tind = find(row < col); % because SF is a symmetric matrix 
 row = row(tind); col = col(tind); 
