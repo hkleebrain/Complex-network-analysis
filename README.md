@@ -7,7 +7,7 @@ Date: 20 August 2019
 
 - Step 1: [Generating artificial complex networks](#generating-artificial-complex-networks)
 - Step 2: [Visualizing artificial complex networks](#visualizing-artificial-complex-networks) 
-- Step 3: [Calculating complex network measures such as centrality, degrees, modularity, and small-worldness](#calculating-complex-network-measures)  
+- Step 3: [Calculating complex network measures such as efficiency, centrality, degrees, and modularity](#calculating-complex-network-measures)  
 - Step 4: [Comparing the complex network measures of different complex networks](#comparing-complex-network-measures) 
     
 
@@ -15,6 +15,13 @@ Date: 20 August 2019
 
 Download: You can download the matlab toolbox for the generation of artificial complex networks 
 made by Gregorio Alanis-Lobato [here](https://se.mathworks.com/matlabcentral/fileexchange/45734-cnm)  
+  
+Here we generate five artificial complex networks:  
+- Regular network (RE)  
+- Small world network (SW)  
+- Random network (RA)  
+- Scale free network (SF) 
+- Hyperbolc network (HY)  
 
 ```Matlab
 % demo_generation.m 
@@ -58,7 +65,11 @@ HY = h2_net('N',p,'ave_deg',k,'gamma',gamma,'T',T,'plot','no');
 (You can find an example provided by MathWorks [here](https://www.mathworks.com/help/matlab/ref/matlab.graphics.chart.primitive.graphplot.layout.html).) 
 
 ```Matlab
+% demo_graphplot.m
+
 % demo_generation.m continued 
+demo_generation 
+
 % Step 2: Visualizing SF
 [row,col] = find(SF); % find the index of nodes of connected edges (row,col) in SF  
 tind = find(row < col); % because SF is a symmetric matrix 
@@ -74,8 +85,9 @@ set(gca,'FontSize',14);
 
 ![SF](SF.jpg)
 
-You can plot the other networks in the same way. <br/> 
-<br/>
+You can plot the other networks in the same way.  
+
+
 
 ## Visualizing RE, SW, and RA by varying sparsity  
 
@@ -140,8 +152,13 @@ end
 
 ![networks_varyingsparsity](https://user-images.githubusercontent.com/54297018/63336685-85d0f080-c37a-11e9-81fc-cdb2d17d97c0.png)
 
+You can try to plot SFs and 
 
 # Calculating complex network measures
+
+## Small-worldness
+
+
 
 # Comparing complex network measures
 
