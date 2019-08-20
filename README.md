@@ -19,7 +19,7 @@ Updated 20 August 2019 <br/>
 Download: You can download the matlab toolbox for the generation of artificial complex networks 
 made by Gregorio Alanis-Lobato <a href="https://se.mathworks.com/matlabcentral/fileexchange/45734-cnm">here</a>  <br/>
 
-```
+```ruby
 % demo.m 
 clear all 
 
@@ -59,10 +59,10 @@ HY = h2_net('N',p,'ave_deg',k,'gamma',gamma,'T',T,'plot','no');
 
 # Visualizing artificial complex networks 
 
-Visualizing SF using MATLAB built-in functions <br/> 
-You can find an example provided by MathWorks <a href="https://www.mathworks.com/help/matlab/ref/matlab.graphics.chart.primitive.graphplot.layout.html">here</a>. 
+<b> Visualizing SF using MATLAB built-in functions </b> <br/> 
+(You can find an example provided by MathWorks <a href="https://www.mathworks.com/help/matlab/ref/matlab.graphics.chart.primitive.graphplot.layout.html">here</a>.) 
 
-```
+```ruby
 [row,col] = find(SF); % find the index of nodes of connected edges (row,col) in SF  
 tind = find(row < col); % because SF is a symmetric matrix 
 row = row(tind); col = col(tind); 
@@ -70,7 +70,7 @@ G = graph(row,col);
 
 figure; 
 h = plot(G,'Layout','force'); 
-
+layout(h,'force','UseGravity',true,'Iterations',1000); 
 ```
 
 
