@@ -26,13 +26,13 @@ clear all
 % cnm toolbox should be in current folder
 addpath('.\cnm');  
 % the name of networks we generate 
-network_name = {'regular network','small world network','scale free network', ...
-    'random network','hyperbolic network'};
+network_name = {'Regular network','Small world network','Random network', ... 
+    'Scale free network','Hyperbolic network'};
 
 % number of nodes in a network 
 p = 30;
 % ratio of the number of connected edges to the number of all possible edges 
-sparsity = 0.3; 
+sparsity = 0.2; 
 % number of all possible edges 
 q = p*(p-1)/2; 
 % number of neareast neigbors to which each node is connected 
@@ -42,23 +42,37 @@ gamma = 4;
 % network temperature that allows for clustering tuning
 T = 0.1; 
 
-%%% Generating artificial complex networks 
+%%% Step 1: Generating artificial complex networks 
 % Regular network 
 RE = regular_net('N',p,'k',k); 
 % Small world network 
 SW = sw_net('N',p,'k',k); 
+% Random network 
+RA = er_net('N',p,'P',sparsity);
 % Scale free network 
 SF = ba_net('N',p,'m',round(k/2));
 % Random network 
 RA = er_net('N',p,'P',sparsity);
-% Random network 
-RA = er_net('N',p,'P',sparsity);
 % Hyperbolic geometric network
 HY = h2_net('N',p,'ave_deg',k,'gamma',gamma,'T',T,'plot','no'); 
-
 ```
 
 # Visualizing artificial complex networks 
+
+Visualizing SF using MATLAB built-in functions <br/> 
+You can find an example provided by MathWorks <a href="https://www.mathworks.com/help/matlab/ref/matlab.graphics.chart.primitive.graphplot.layout.html">here</a>. 
+
+```
+[row,col] = find(SF); % find the index of nodes of connected edges (row,col) in SF  
+tind = find(row < col); % because SF is a symmetric matrix 
+row = row(tind); col = col(tind); 
+G = graph(row,col); 
+
+figure; 
+h = plot(G,'Layout','force'); 
+
+```
+
 
 # Calculating complex network measures 
 
