@@ -14,7 +14,7 @@ Date: 20 August 2019
 
 # Generating artificial complex networks
 
-Download: You can download cnm toolbox for the generation of artificial complex networks 
+Download: cnm toolbox for the generation of artificial complex networks 
 made by Gregorio Alanis-Lobato [here](https://se.mathworks.com/matlabcentral/fileexchange/45734-cnm)  
   
 Here we generate five artificial complex networks:  
@@ -161,9 +161,13 @@ You can try to plot SFs and HYs by varying sparsity.
 
 # Calculating complex network measures
 
-You can download codes for complex network measures [here](https://sites.google.com/site/bctnet/Home/functions). 
+Download: brain connectivity toolbox for complex network measures [here](https://sites.google.com/site/bctnet/Home/functions)  
+
 
 ## Global network measures: global and average local efficiencies
+
+Download: efficiency_bin.m [here](https://sites.google.com/site/bctnet/Home/functions)  
+
 
 ```Matlab
 % demo_efficiency.m
@@ -212,6 +216,8 @@ legend(network_name); set(gca,'FontSize',14);
 
 
 ## Local network measures: degree, local efficiency, and betweenness
+
+Download: efficiency_bin.m, betweenness_bin.m [here](https://sites.google.com/site/bctnet/Home/functions)  
 
 ```Matlab
 % demo_localmeasures.m
