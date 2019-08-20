@@ -213,6 +213,191 @@ legend(network_name); set(gca,'FontSize',14);
 
 ## Local network measures: degree, local efficiency, and betweenness
 
+```Matlab
+% demo_localmeasures.m
+clear all;
+
+network_name = {'RE','SW','RA','SF','HY'};
+
+% Generate artificial complex networks with sparsity 0.2
+sparsity = 0.2;
+[RE,SW,RA,SF,HY] = graph_generation(sparsity);
+
+% Determine the color of nodes depending on their local measures 
+% The darker the color, the larger the local measure. 
+figure; 
+color_list = colormap(hot(100)); 
+color_list = color_list(end:-1:1,:); 
+colormap(color_list); 
+
+%%% Local efficiency
+% Estimate and plot the local efficiency of nodes
+for j = 1:5,
+    if j == 1,
+        A = RE;
+    elseif j == 2,
+        A = SW;
+    elseif j == 3,
+        A = RA;
+    elseif j == 4,
+        A = SF;
+    else
+        A = HY;
+    end
+    
+    % Estimate local efficiencies 
+    Eloc = efficiency_bin(A,1); 
+    % Set the color of nodes
+    tind = ceil(Eloc*100); 
+    tind = max(tind,1); 
+    node_color = color_list(tind,:); 
+    % Set the size of nodes 
+    node_size = ceil(Eloc*10); 
+    node_size = max(node_size,1); 
+    
+    % Plot local efficiency 
+    [row,col] = find(A); % find the index of nodes of connected edges (row,col) in SF  
+    tind = find(row < col); % because SF is a symmetric matrix 
+    row = row(tind); col = col(tind); 
+    G = graph(row,col); 
+
+    subplot(3,5,j), 
+    h = plot(G,'Layout','force','MarkerSize',node_size,'NodeColor',node_color); 
+    layout(h,'force','UseGravity',true,'Iterations',1000); 
+    xlabel(network_name{j}); 
+    if j == 3, 
+        title('Local efficiency'); 
+    end 
+    set(gca,'FontSize',14); 
+end
+
+
+%%% Betweenness centrality
+% Estimate the betweenness centrality of nodes
+BC = []; 
+for j = 1:5,
+    if j == 1,
+        A = RE;
+    elseif j == 2,
+        A = SW;
+    elseif j == 3,
+        A = RA;
+    elseif j == 4,
+        A = SF;
+    else
+        A = HY;
+    end
+    
+    % Estimate betweenness centrality 
+    BC(:,j) = betweenness_bin(A);
+end
+
+% Normalize BC by dividing by the maximum BC 
+nBC = BC/max(BC(:)); 
+
+% Plot the betweenness centrality of nodes
+for j = 1:5,
+    if j == 1,
+        A = RE;
+    elseif j == 2,
+        A = SW;
+    elseif j == 3,
+        A = RA;
+    elseif j == 4,
+        A = SF;
+    else
+        A = HY;
+    end
+    
+    tBC = nBC(:,j); 
+    % Set the color of nodes
+    tind = ceil(tBC*100); 
+    tind = max(tind,1); 
+    node_color = color_list(tind,:); 
+    % Set the size of nodes 
+    node_size = ceil(tBC*10); 
+    node_size = max(node_size,1); 
+    
+    % Plot betweenness centrality 
+    [row,col] = find(A); % find the index of nodes of connected edges (row,col) in SF  
+    tind = find(row < col); % because a network is a symmetric matrix 
+    row = row(tind); col = col(tind); 
+    G = graph(row,col); 
+
+    subplot(3,5,j+5), 
+    h = plot(G,'Layout','force','MarkerSize',node_size,'NodeColor',node_color); 
+    layout(h,'force','UseGravity',true,'Iterations',1000); 
+    xlabel(network_name{j}); 
+    if j == 3, 
+        title('Betweenness centrality'); 
+    end 
+    set(gca,'FontSize',14); 
+end
+
+
+%%% Degree 
+% Estimate the degree of nodes
+p = size(A,1); 
+deg = []; 
+for j = 1:5,
+    if j == 1,
+        A = RE;
+    elseif j == 2,
+        A = SW;
+    elseif j == 3,
+        A = RA;
+    elseif j == 4,
+        A = SF;
+    else
+        A = HY;
+    end
+    
+    % Estimate the degree of nodes  
+    deg(:,j) = sum(A,2);
+end
+
+% Normalize deg by dividing by the maximum BC 
+ndeg = deg/max(deg(:)); 
+% Plot the degree of nodes
+for j = 1:5,
+    if j == 1,
+        A = RE;
+    elseif j == 2,
+        A = SW;
+    elseif j == 3,
+        A = RA;
+    elseif j == 4,
+        A = SF;
+    else
+        A = HY;
+    end
+    
+    tdeg = ndeg(:,j); 
+    % Set the color of nodes
+    tind = ceil(tdeg*100); 
+    tind = max(tind,1); 
+    node_color = color_list(tind,:); 
+    % Set the size of nodes 
+    node_size = ceil(tdeg*10); 
+    node_size = max(node_size,1); 
+    
+    % Plot the degree of nodes  
+    [row,col] = find(A); % find the index of nodes of connected edges (row,col) in SF  
+    tind = find(row < col); % because a network is a symmetric matrix 
+    row = row(tind); col = col(tind); 
+    G = graph(row,col); 
+
+    subplot(3,5,j+10), 
+    h = plot(G,'Layout','force','MarkerSize',node_size,'NodeColor',node_color); 
+    layout(h,'force','UseGravity',true,'Iterations',1000);
+    xlabel(network_name{j}); 
+    if j == 3, 
+        title('Degree'); 
+    end 
+    set(gca,'FontSize',14); 
+end
+```
+
 
 
 
