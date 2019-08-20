@@ -71,7 +71,7 @@ HY = h2_net('N',p,'ave_deg',k,'gamma',gamma,'T',T,'plot','no');
 % demo_graphplot.m
 
 % demo_generation.m continued 
-demo_generation 
+demo_generation; 
 
 % Step 2: Visualizing SF
 [row,col] = find(SF); % find the index of nodes of connected edges (row,col) in SF  
@@ -82,7 +82,7 @@ G = graph(row,col);
 figure; 
 h = plot(G,'Layout','force'); 
 layout(h,'force','UseGravity',true,'Iterations',1000); 
-title(network_name{5}); 
+title(network_name{4}); 
 set(gca,'FontSize',14); 
 ```
 
