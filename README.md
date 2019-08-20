@@ -86,7 +86,7 @@ title(network_name{4});
 set(gca,'FontSize',14); 
 ```
 
-![SF](SF.jpg)
+![SF](https://user-images.githubusercontent.com/54297018/63365257-47572800-c3b2-11e9-980f-385368b05b18.png)
 
 You can plot other networks in the same way.  
 
