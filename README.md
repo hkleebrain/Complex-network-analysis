@@ -13,7 +13,7 @@ Date: 20 August 2019
 
 # Generating artificial complex networks
 
-Download: You can download the matlab toolbox for the generation of artificial complex networks 
+Download: You can download cnm toolbox for the generation of artificial complex networks 
 made by Gregorio Alanis-Lobato [here](https://se.mathworks.com/matlabcentral/fileexchange/45734-cnm)  
   
 Here we generate five artificial complex networks:  
@@ -22,7 +22,9 @@ Here we generate five artificial complex networks:
 - Random network (RA)  
 - Scale free network (SF) 
 - Hyperbolc network (HY)  
-
+  
+    
+    
 ```Matlab
 % demo_generation.m 
 clear all 
@@ -85,7 +87,7 @@ set(gca,'FontSize',14);
 
 ![SF](SF.jpg)
 
-You can plot the other networks in the same way.  
+You can plot other networks in the same way.  
 
 
 
@@ -152,11 +154,56 @@ end
 
 ![networks_varyingsparsity](https://user-images.githubusercontent.com/54297018/63336685-85d0f080-c37a-11e9-81fc-cdb2d17d97c0.png)
 
-You can try to plot SFs and 
+You can try to plot SFs and HYs by varying sparsity. 
+
+
 
 # Calculating complex network measures
 
-## Small-worldness
+## Efficiency 
+
+```Matlab
+% demo_efficiency.m
+clear all;
+
+network_name = {'RA','SW','RA','SF','HY'};
+
+% Estimate global and local efficiencies
+Eglob = []; Eloc = [];
+for iter = 1:100,
+    for s = 1:10,
+        sparsity = s*0.1;
+        [RA,SW,RE,SF,HY] = graph_generation(sparsity);
+        
+        for j = 1:5,
+            if j == 1,
+                A = RA;
+            elseif j == 2,
+                A = SW;
+            elseif j == 3,
+                A = RE;
+            elseif j == 4,
+                A = SF;
+            else
+                A = HY;
+            end
+            
+            Eglob(s,j,iter) = efficiency_bin(A);
+            Eloc(s,j,iter) = mean(efficiency_bin(A,1)); 
+        end
+    end
+    display(num2str(iter)); 
+end
+
+% plot the average global and local efficiencies of 100 random complex networks 
+figure;
+subplot(1,2,1), plot([1:10]*0.1,mean(Eglob,3),'.-','MarkerSize',10);
+xlabel('Sparsity'); ylabel('Global efficiency'); 
+legend(network_name); set(gca,'FontSize',14);
+subplot(1,2,2), plot([1:10]*0.1,mean(Eloc,3),'.-','MarkerSize',10);
+xlabel('Sparsity'); ylabel('Local efficiency'); 
+legend(network_name); set(gca,'FontSize',14);
+``` 
 
 
 
